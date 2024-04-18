@@ -18,13 +18,33 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Submissao {
     @Id
-    @Column(name = "SubmissaoId")
+    @Column(name = "ID_SUBMISSAO")
     private Integer id;
-    @Column(name = "MarcadoresSugeridos")
-    private String marcadoresRaw;
-    @Column(name = "foiAprovda")
+    @Column(name = "ID_ITEM")
+    private Integer idItem;
+    @Column(name = "ID_USUARIO")
+    private Integer idUsuario;
+    @Column(name = "DATA_SUBMISSAO")
+    private String dataSubmissao;
+    @Column(name = "TITULO")
+    private String titulo;
+    @Column(name = "DATAS")
+    private String datas;
+    @Column(name = "CONTENT")
+    private String content;
+    @Column(name = "APROVADA")
     private Boolean aprovada;
 
     @Transient
-    private List<String> marcadores;
+    private List<PontoAcesso> pontosAcesso;
 }
+/**
+ * ID_SUBMISSAO SERIAL PRIMARY KEY,
+    ID_ITEM INTEGER,
+    ID_USUARIO INTEGER,
+    DATA_SUBMISSAO TIMESTAMP,
+    TITULO VARCHAR(60),
+    DATAS VARCHAR(60),
+    CONTENT TEXT,
+    APROVADA BOOLEAN,
+ */

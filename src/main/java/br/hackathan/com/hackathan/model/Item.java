@@ -13,22 +13,21 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "PontoAcesso")
+@Table(name = "Item")
 @Entity
-public class PontoAcesso {
+public class Item {
     @Id
-    @Column(name = "ID_PONTOS_ACESSO")
+    @Column(name = "ID_ITEM")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "DESCR_PONTO")
-    private String descricao;
-    @Column(name = "INDICE_PONTO")
-    private Integer indice;
-
+    @Column(name = "COD_REFERENCIA")
+    private String codReferencia;
+    @Column(name = "TIPO_ITEM")
+    private String tipoItem;
+    
 }
 /**
- * 
-    ID_PONTOS_ACESSO SERIAL PRIMARY KEY,
-    DESCR_PONTO VARCHAR(60),
-    INDICE_PONTO INTEGER
+ * COD_REFERENCIA VARCHAR(255) PRIMARY KEY,
+    ID_ITEM INTEGER,
+    TIPO_ITEM VARCHAR(20)
  */
