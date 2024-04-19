@@ -11,6 +11,6 @@ import br.hackathan.com.hackathan.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
-    @Query("SELECT * FROM USUARIO WHERE EMAIL = :email")
+    @Query(value = "SELECT * FROM USUARIO WHERE EMAIL = :email", nativeQuery = true)
     Optional<Usuario> findByEmail(@Param("email") String email);
 }

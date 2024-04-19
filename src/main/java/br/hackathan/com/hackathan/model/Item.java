@@ -24,10 +24,7 @@ public class Item {
     private String codReferencia;
     @Column(name = "TIPO_ITEM")
     private String tipoItem;
+    @Column(name = "LINK_ITEM")
+    private String linkItem;
     
 }
-/**
- * COD_REFERENCIA VARCHAR(255) PRIMARY KEY,
-    ID_ITEM INTEGER,
-    TIPO_ITEM VARCHAR(20)
- */

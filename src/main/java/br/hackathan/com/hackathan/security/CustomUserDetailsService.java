@@ -26,8 +26,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         System.out.println("Username: " + username);
 
         Optional<Usuario> user = usuarioRepository.findByEmail(username);
-
-        System.out.println("User: " + user);
+        
         if(user.isPresent()) {
             return User.withUsername(user.get().getEmail())
             .password(new BCryptPasswordEncoder().encode(user.get().getSenha()))
